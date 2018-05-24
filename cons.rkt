@@ -4,7 +4,7 @@
 (define SIM-ID 2)
 
 (define N 100)
-(define CYCLES 200)
+(define CYCLES 500000)
 (define SPEED 10)
 (define ROUNDS 500)
 (define DELTA .99)

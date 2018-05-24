@@ -24,4 +24,14 @@ the configurations of the simulation are moved to cons.rkt file
 
 data is exported to dropbox/pd-0118-lab
 
+## TODOS
+check if the pic has its title of details -> added
+
+continue the simulation from the previous simulation end -> added
+
+because these are already done in the ndg-m-0418
+
+i believe that there are other progressive updates from new simulaton settings that could be retro-update into old simulation settings, please check
+
+
 
