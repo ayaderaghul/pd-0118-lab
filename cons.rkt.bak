@@ -1,0 +1,13 @@
+#lang racket
+
+;; CONFIGURATION
+(define SIM-ID 1)
+
+(define N 100)
+(define CYCLES 80000)
+(define SPEED 10)
+(define ROUNDS 500)
+(define DELTA .99)
+(define MUTATION 1)
+
+(define D (build-list ROUNDS (lambda (x) (expt DELTA x))))

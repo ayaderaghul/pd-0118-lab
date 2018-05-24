@@ -1,19 +1,12 @@
 #lang racket
-(require "auto.rkt" "inout.rkt")
+(require "auto.rkt" "inout.rkt" "cons.rkt")
 (require plot racket/hash)
+
 (plot-new-window? #t)
 
 (provide (all-defined-out))
 
-;; CONFIGURATION
-(define SIM-ID 1)
 
-(define N 100)
-(define CYCLES 80000)
-(define SPEED 10)
-(define ROUNDS 500)
-(define DELTA .99)
-(define MUTATION 1)
 
 ;; POPULATION
 (define (build-random-population n)
@@ -25,7 +18,7 @@
     (define auto1 (vector-ref population i))
     (define auto2 (vector-ref population (+ i 1)))
     (define-values (a1 a2)
-      (interact auto1 auto2 rounds delta))
+      (interact auto1 auto2))
     (vector-set! population i a1)
     (vector-set! population (+ i 1) a2))
   population)
@@ -180,8 +173,8 @@
 ;;  (define A (resurrect-p data))
   (define MEAN (gen-name SIM-ID "mean"))
   (define RANK (gen-name SIM-ID "rank"))
-  (define P (gen-name SIM-ID "p"))
-  (time (evolve A CYCLES SPEED MUTATION ROUNDS DELTA MEAN RANK P SIM-ID))
+  (define POPU (gen-name SIM-ID "p"))
+  (time (evolve A CYCLES SPEED MUTATION ROUNDS DELTA MEAN RANK POPU SIM-ID))
   (define DATA (csvfile->list MEAN))
   (define PIC (gen-name SIM-ID "pic.png"))
   (plot-mean (input->numbers DATA) DELTA ROUNDS PIC))

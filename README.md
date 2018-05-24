@@ -1,12 +1,27 @@
-# pd-0118
+# pd-0118-lab
 
 log: 
+24/05/2018: 
+copied from pd-0118
+modified to run in lab 1
 
-important: on 19:24 1/4/2018, i make a good improvement in mutate function. it is more random. data from before this fix is in data, data2, data3. it's better to use the data after this fix.
+how to run in lab 1 computer:
+change the directory for the output into a dropbox folder (ie smt like: "/Users/linhchi.nguyen/Dropbox/fsm-bar/run1/mean.png")
+(require (file "/Users/linhchi.nguyen/Documents/fsm-bar/main.rkt"))
 
-the fix is this: if the prob is x. the maximum it can be decreased is x itself.
-the maximum it can be increased is 1 - x.
-i random up to this number if i want to increase or decrease.
+how to run in disa lab computer:
+change directory for output: "C:/Documents and Settings/linhchi.nguyen/My Documents/Dropbox/fsm-bar/run6/mean"
+(require (file "R:/fsm-bar/main.rkt"))
+
+changes:
+create a DELTAS list including all delta so that there is no need to calculate delta in each round of pair match
+
+the function (interact-d au1 au2 rounds delta) -> (interact-d au1 au2)
+
+in which (_ (in-range rounds)) -> (_ (in-list DELTAS))
+
+the configurations of the simulation are moved to cons.rkt file
+
+data is exported to dropbox/pd-0118-lab
 
 
-# pd-0118
