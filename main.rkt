@@ -181,6 +181,6 @@
   (define RANK (gen-name SIM-ID "rank"))
   (time (evolve POPULATION CYCLES SPEED MUTATION MEAN RANK POPU SIM-ID))
   (define DATA (csvfile->list MEAN))
-  (define PIC (gen-name SIM-ID "pic.png"))
+  (define PIC (gen-name SIM-ID "pic.pdf"))
   (define TIT (gen-pic-title))
   (plot-mean (input->numbers DATA) DELTA ROUNDS PIC TIT))

@@ -5,15 +5,15 @@ log:
 copied from pd-0118
 modified to run in lab 1
 
-###how to run in lab 1 computer:
+### how to run in lab 1 computer:
 change the directory for the output into a dropbox folder (ie smt like: "/Users/linhchi.nguyen/Dropbox/fsm-bar/run1/mean.png")
 (require (file "/Users/linhchi.nguyen/Documents/fsm-bar/main.rkt"))
 
-###how to run in disa lab computer:
+### how to run in disa lab computer:
 change directory for output: "C:/Documents and Settings/linhchi.nguyen/My Documents/Dropbox/fsm-bar/run6/mean"
 (require (file "R:/fsm-bar/main.rkt"))
 
-##changes:
+## changes:
 1. create a DELTAS list including all delta so that there is no need to calculate delta in each round of pair match
 
 the function (interact-d au1 au2 rounds delta) -> (interact-d au1 au2)
@@ -44,5 +44,9 @@ new: if n = 0, return, else..
 
 5. i believe the code can be restructured better
 
-6. export pdf/eps instead of png
+6. export pdf instead of png -> yes
+pdf is better for latex i believe (less weight)
 
+7. i think the code for pd and ndg would be diff in structure. for example, in pd, i would like to round the probability to 2 decimals but in ndg maybe just 1, the complexity is already enough. 
+
+also, pd does not require an automaton structure but ndg does bc too many outcomes
