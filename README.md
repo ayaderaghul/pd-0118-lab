@@ -44,3 +44,5 @@ new: if n = 0, return, else..
 
 5. i believe the code can be restructured better
 
+6. export pdf/eps instead of png
+
