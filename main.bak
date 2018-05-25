@@ -130,9 +130,8 @@
     (define auto (vector-ref population i))
     (vector-set! population i (mutate auto))))
 
-(define (gen-name name)
-  (format "/Users/linhchi.nguyen/Dropbox/pd-0118/~a~a~a"
-          (number->string SIM-ID) DELTAstr name))
+(define (gen-name id name)
+  (format "/Users/linhchi.nguyen/Dropbox/pd-0118/~a~a" (number->string id) name))
 
 
 ;; MAIN
@@ -172,16 +171,16 @@
 
 (define (main)
   (collect-garbage)
-  (define POPU (format "/Users/linhchi.nguyen/Dropbox/pd-0118/~a~ap.txt" SIM-ID DELTAstr))
-  (define p-POPU (format "/Users/linhchi.nguyen/Dropbox/pd-0118/~a~ap.txt" (- SIM-ID 1) DELTAstr))
+  (define POPU (format "/Users/linhchi.nguyen/Dropbox/pd-0118/~ap.txt" SIM-ID))
+  (define p-POPU (format "/Users/linhchi.nguyen/Dropbox/pd-0118/~ap.txt" (- SIM-ID 1)))
   (define POPULATION
     (if (= SIM-ID 1)
         (build-random-population N)
         (resurrect-p (csvfile->list p-POPU))))
-  (define MEAN (gen-name "mean"))
-  (define RANK (gen-name "rank"))
+  (define MEAN (gen-name SIM-ID "mean"))
+  (define RANK (gen-name SIM-ID "rank"))
   (time (evolve POPULATION CYCLES SPEED MUTATION MEAN RANK POPU SIM-ID))
   (define DATA (csvfile->list MEAN))
-  (define PIC (gen-name "pic.pdf"))
+  (define PIC (gen-name SIM-ID "pic.pdf"))
   (define TIT (gen-pic-title))
   (plot-mean (input->numbers DATA) DELTA ROUNDS PIC TIT))

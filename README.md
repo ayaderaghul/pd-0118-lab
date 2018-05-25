@@ -50,3 +50,5 @@ pdf is better for latex i believe (less weight)
 7. i think the code for pd and ndg would be diff in structure. for example, in pd, i would like to round the probability to 2 decimals but in ndg maybe just 1, the complexity is already enough. 
 
 also, pd does not require an automaton structure but ndg does bc too many outcomes
+
+8. add delta to the output file name -> added
