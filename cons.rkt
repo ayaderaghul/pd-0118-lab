@@ -7,7 +7,7 @@
 (define CYCLES 500)
 (define SPEED 10)
 (define ROUNDS 500000)
-(define DELTA .50)
+(define DELTA .99)
 (define DELTAstr (string-trim (number->string (* DELTA 100)) ".0"))
 (define MUTATION 1)
 
