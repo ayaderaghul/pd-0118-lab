@@ -153,7 +153,7 @@
 ;; helper of mutate, accommodate the flaw in floating numbers
 (define (random-decimal prob)
   (define n (inexact->exact (round (* prob 100))))
-  (if (zero? prob)
+  (if (zero? n)
       0
       (round2 (exact->inexact (/ (random n) 100)))))
 
