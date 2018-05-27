@@ -1,7 +1,7 @@
 #lang racket
 (provide (all-defined-out))
 ;; CONFIGURATION
-(define SIM-ID 3)
+(define SIM-ID 4)
 
 (define N 100)
 (define CYCLES 500000) ;; careful, you change the cycles here
